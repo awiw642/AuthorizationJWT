@@ -62,7 +62,9 @@ app.get('/api/hrr27/getStudents', passport.authenticate('jwt', { session: false 
   res.json({ names });
 });
 
+app.set('port', process.env.PORT || 1234);
+const port = app.get('port');
 
-app.listen(1234, () => {
-  console.log('Listening on port 1234');
+app.listen(port, () => {
+  console.log('Server started');
 });
